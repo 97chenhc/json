@@ -78,7 +78,13 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Volumes/Macintosh HD - Data/codes/Clion/json/main.cpp">
+		<Unit filename="/Volumes/Macintosh HD - Data/codes/Clion/json/json.cpp">
+			<Option target="json"/>
+		</Unit>
+		<Unit filename="/Volumes/Macintosh HD - Data/codes/Clion/json/json.h">
+			<Option target="json"/>
+		</Unit>
+		<Unit filename="/Volumes/Macintosh HD - Data/codes/Clion/json/test.cpp">
 			<Option target="json"/>
 		</Unit>
 		<Unit filename="/Volumes/Macintosh HD - Data/codes/Clion/json/CMakeLists.txt">

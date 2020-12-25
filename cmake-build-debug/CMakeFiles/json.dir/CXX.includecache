@@ -6,7 +6,13 @@
 
 #IncludeRegexTransform: 
 
-/Volumes/Macintosh HD - Data/codes/Clion/json/main.cpp
-iostream
+/Volumes/Macintosh HD - Data/codes/Clion/json/json.cpp
+json.h
+/Volumes/Macintosh HD - Data/codes/Clion/json/json.h
+
+/Volumes/Macintosh HD - Data/codes/Clion/json/json.h
+cassert
+-
+string
 -
 

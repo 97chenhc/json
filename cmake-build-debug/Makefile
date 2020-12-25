@@ -143,32 +143,59 @@ json/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/json.dir/build.make CMakeFiles/json.dir/build
 .PHONY : json/fast
 
-main.o: main.cpp.o
+json.o: json.cpp.o
 
-.PHONY : main.o
+.PHONY : json.o
 
 # target to build an object file
-main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/json.dir/build.make CMakeFiles/json.dir/main.cpp.o
-.PHONY : main.cpp.o
+json.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/json.dir/build.make CMakeFiles/json.dir/json.cpp.o
+.PHONY : json.cpp.o
 
-main.i: main.cpp.i
+json.i: json.cpp.i
 
-.PHONY : main.i
+.PHONY : json.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/json.dir/build.make CMakeFiles/json.dir/main.cpp.i
-.PHONY : main.cpp.i
+json.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/json.dir/build.make CMakeFiles/json.dir/json.cpp.i
+.PHONY : json.cpp.i
 
-main.s: main.cpp.s
+json.s: json.cpp.s
 
-.PHONY : main.s
+.PHONY : json.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/json.dir/build.make CMakeFiles/json.dir/main.cpp.s
-.PHONY : main.cpp.s
+json.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/json.dir/build.make CMakeFiles/json.dir/json.cpp.s
+.PHONY : json.cpp.s
+
+test.o: test.cpp.o
+
+.PHONY : test.o
+
+# target to build an object file
+test.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/json.dir/build.make CMakeFiles/json.dir/test.cpp.o
+.PHONY : test.cpp.o
+
+test.i: test.cpp.i
+
+.PHONY : test.i
+
+# target to preprocess a source file
+test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/json.dir/build.make CMakeFiles/json.dir/test.cpp.i
+.PHONY : test.cpp.i
+
+test.s: test.cpp.s
+
+.PHONY : test.s
+
+# target to generate assembly for a file
+test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/json.dir/build.make CMakeFiles/json.dir/test.cpp.s
+.PHONY : test.cpp.s
 
 # Help Target
 help:
@@ -179,9 +206,12 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... json"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... json.o"
+	@echo "... json.i"
+	@echo "... json.s"
+	@echo "... test.o"
+	@echo "... test.i"
+	@echo "... test.s"
 .PHONY : help
 
 

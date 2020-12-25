@@ -4,7 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Volumes/Macintosh HD - Data/codes/Clion/json/main.cpp" "/Volumes/Macintosh HD - Data/codes/Clion/json/cmake-build-debug/CMakeFiles/json.dir/main.cpp.o"
+  "/Volumes/Macintosh HD - Data/codes/Clion/json/json.cpp" "/Volumes/Macintosh HD - Data/codes/Clion/json/cmake-build-debug/CMakeFiles/json.dir/json.cpp.o"
+  "/Volumes/Macintosh HD - Data/codes/Clion/json/test.cpp" "/Volumes/Macintosh HD - Data/codes/Clion/json/cmake-build-debug/CMakeFiles/json.dir/test.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")
 

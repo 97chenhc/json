@@ -3,4 +3,4 @@ project(json)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(json main.cpp)
+add_executable(json test.cpp json.cpp json.h)
