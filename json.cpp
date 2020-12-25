@@ -3,7 +3,9 @@
 //
 #include "json.h"
 
-#define EXCEPT(p, ch) do { assert(*p == (ch)); p++; } while(0)
+#define EXCEPT(p, ch)   do { assert(*p == (ch)); p++; } while(0)
+#define ISDIGIT(ch)         ((ch) >= '0' && (ch) <= '9')
+#define ISDIGIT1TO9(ch)     ((ch) >= '1' && (ch) <= '9')
 
 using namespace json;
 
@@ -24,7 +26,30 @@ Error Value::parse_literal(Type literal_type, const string &literal) {
 }
 
 Error Value::parse_number() {
-
+    const char *t = p;
+    if (*p == '-') p++;
+    if (*p == '0') p++;
+    else {
+        if (!ISDIGIT1TO9(*p)) return PARSE_INVALID_VALUE;
+        for (p++; ISDIGIT(*p); p++);
+    }
+    if (*p == '.') {
+        p++;
+        if (!ISDIGIT(*p)) return PARSE_INVALID_VALUE;
+        for (p++; ISDIGIT(*p); p++);
+    }
+    if(*p == 'e' || *p == 'E') {
+        p++;
+        if (*p == '+' || *p == '-') p++;
+        if (!ISDIGIT(*p)) return PARSE_INVALID_VALUE;
+        for (p++; ISDIGIT(*p); p++);
+    }
+    errno = 0;
+    n = strtod(t, NULL);
+    if (errno == ERANGE && (n == HUGE_VAL || n == -HUGE_VAL))
+        return PARSE_NUMBER_TOO_BIG;
+    type = NUMBER;
+    return PARSE_OK;
 }
 
 Error Value::parse_value() {
@@ -44,7 +69,10 @@ Error Value::parse(const char* json) {
     Error err;
     if ((err = parse_value()) == PARSE_OK) {
         parse_whitespace();
-        if (*p != '\0') err = PARSE_ROOT_NOT_SINGULAR;
+        if (*p != '\0') {
+            type = NUL;
+            err = PARSE_ROOT_NOT_SINGULAR;
+        }
     }
     return err;
 }

@@ -15,4 +15,10 @@ cassert
 -
 string
 -
+cstdlib
+-
+errno.h
+-
+math.h
+-
 

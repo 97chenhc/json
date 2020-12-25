@@ -6,6 +6,9 @@
 
 #include <cassert>
 #include <string>
+#include <cstdlib>
+#include <errno.h>   /* errno, ERANGE */
+#include <math.h>    /* HUGE_VAL */
 
 using std::string;
 
@@ -17,7 +20,8 @@ namespace json {
         PARSE_OK = 0,
         PARSE_EXPECT_VALUE,
         PARSE_INVALID_VALUE,
-        PARSE_ROOT_NOT_SINGULAR
+        PARSE_ROOT_NOT_SINGULAR,
+        PARSE_NUMBER_TOO_BIG
     };
 
     class Value{
